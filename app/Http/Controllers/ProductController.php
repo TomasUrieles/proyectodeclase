@@ -8,17 +8,17 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return 'LISTA DE PRODUCTOS';
+        return view('product.index');
     }
 
     public function create()
     {
-        return "Formulario de crear producto";
+        return view('product.create');
     }
 
     public function show($producto)
     {
-        return "Detalle del producto: " . $producto;
+        return view('product.show');
     }
 }
 
