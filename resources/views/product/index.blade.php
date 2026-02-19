@@ -1,35 +1,26 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Tech Store</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+@extends('layouts.app')
 
+@section('title', 'Productos')
 
-</head>
-<body>
+@section('content')
 
-<div class="navbar">
-    <h1>Tech Store</h1>
-    <div>
-        <a href="index.html">Inicio</a>
-        <a href="create.html">Agregar Producto</a>
-    </div>
-</div>
+<h1>Lista de Productos</h1>
 
-<div class="container">
-    <h2>Productos Disponibles</h2>
+<a href="{{ route('product.create') }}" class="btn">
+    Agregar Producto
+</a>
 
-    <div class="grid">
+<div class="grid">
+    @foreach($products as $product)
         <div class="card">
-            <img src="https://via.placeholder.com/300" alt="Producto">
-            <h3>Mouse Gamer RGB</h3>
-            <p>Alta precisión y diseño ergonómico.</p>
-            <div class="price">$120.000</div>
-            <a href="show.html" class="btn">Ver Detalle</a>
+            <h3>{{ $product->nombre }}</h3>
+            <p>${{ $product->precio }}</p>
+
+            <a href="{{ route('product.show', $product->id) }}" class="btn">
+                Ver Producto
+            </a>
         </div>
-    </div>
+    @endforeach
 </div>
 
-</body>
-</html>
+@endsection

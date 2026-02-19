@@ -166,3 +166,52 @@ input:focus, textarea:focus, select:focus {
 .card {
     animation: fadeIn 0.5s ease-in-out;
 }
+
+/* ===== navbar ===== */
+
+.navbar {
+    background: #1a1a1f;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: #00bcd4;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 25px;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00bcd4;
+}
+
+.nav-links .active {
+    color: #00bcd4;
+    border-bottom: 2px solid #00bcd4;
+}
+
+
+
+/* ===== footer ===== */
+.footer {
+    background: #1a1a1f;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+    border-top: 1px solid #2a2a30;
+}
+
+.footer p {
+    color: #b3b3b3;
+    font-size: 14px;
+}
