@@ -1,33 +1,35 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tech Store</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
-@section('title', 'Productos')
 
-@section('content')
+</head>
+<body>
 
-<h2>Productos Disponibles</h2>
-
-<div class="grid">
-    @foreach($products as $product)
-        <div class="card">
-            <img src="{{ asset('storage/'.$product->imagen) }}" alt="Imagen">
-
-            <h3>{{ $product->nombre }}</h3>
-
-            <p>{{ Str::limit($product->descripcion, 60) }}</p>
-
-            <div class="price">
-                ${{ number_format($product->precio, 0, ',', '.') }}
-            </div>
-
-            <p class="estado {{ $product->estado == 'Disponible' ? 'activo' : 'inactivo' }}">
-                {{ $product->estado }}
-            </p>
-
-            <a href="{{ route('products.show', $product->id_product) }}" class="btn">
-                Ver Detalle
-            </a>
-        </div>
-    @endforeach
+<div class="navbar">
+    <h1>Tech Store</h1>
+    <div>
+        <a href="index.html">Inicio</a>
+        <a href="create.html">Agregar Producto</a>
+    </div>
 </div>
 
-@endsection
+<div class="container">
+    <h2>Productos Disponibles</h2>
+
+    <div class="grid">
+        <div class="card">
+            <img src="https://via.placeholder.com/300" alt="Producto">
+            <h3>Mouse Gamer RGB</h3>
+            <p>Alta precisión y diseño ergonómico.</p>
+            <div class="price">$120.000</div>
+            <a href="show.html" class="btn">Ver Detalle</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

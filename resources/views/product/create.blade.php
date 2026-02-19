@@ -1,30 +1,40 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Producto</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
-@section('title', 'Crear Producto')
 
-@section('content')
+</head>
+<body>
 
-<h2>Agregar Producto</h2>
+<div class="navbar">
+    <h1>Tech Store</h1>
+    <div>
+        <a href="index.html">Inicio</a>
+    </div>
+</div>
 
-<form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
-    @csrf
+<div class="container">
+    <h2>Agregar Nuevo Producto</h2>
 
-    <input type="text" name="id_product" placeholder="ID del producto" required>
+    <form>
+        <input type="text" placeholder="ID del producto">
+        <input type="text" placeholder="Nombre">
+        <input type="number" placeholder="Precio">
+        <textarea placeholder="Descripción"></textarea>
+        
+        <input type="file">
 
-    <input type="text" name="nombre" placeholder="Nombre" required>
+        <select>
+            <option>Disponible</option>
+            <option>No Disponible</option>
+        </select>
 
-    <input type="number" name="precio" placeholder="Precio" required>
+        <button type="submit" class="btn">Guardar Producto</button>
+    </form>
+</div>
 
-    <textarea name="descripcion" placeholder="Descripción"></textarea>
-
-    <input type="file" name="imagen" required>
-
-    <select name="estado">
-        <option value="Disponible">Disponible</option>
-        <option value="No Disponible">No Disponible</option>
-    </select>
-
-    <button type="submit" class="btn">Guardar Producto</button>
-</form>
-
-@endsection
+</body>
+</html>
