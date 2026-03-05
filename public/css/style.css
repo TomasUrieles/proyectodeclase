@@ -41,6 +41,71 @@ body {
     padding: 40px;
 }
 
+/* CONTENEDOR */
+
+.container{
+    width: 80%;
+    margin: auto;
+    padding: 40px 0;
+}
+
+/* TITULO */
+
+.title{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* FORMULARIO */
+
+.form-product{
+    max-width: 500px;
+    margin: auto;
+    background: #1c1c1c;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+/* GRUPOS */
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-group label{
+    margin-bottom: 5px;
+}
+
+/* INPUTS */
+
+input,
+textarea,
+select{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #2b2b2b;
+    color: white;
+}
+
+/* BOTON */
+
+.btn{
+    width: 100%;
+    padding: 12px;
+    background: #00c8ff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn:hover{
+    background: #009ac4;
+}
+
 /* ===== Cards ===== */
 .card {
     background: #1a1a1f;
@@ -215,3 +280,4 @@ input:focus, textarea:focus, select:focus {
     color: #b3b3b3;
     font-size: 14px;
 }
+

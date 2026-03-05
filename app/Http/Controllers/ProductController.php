@@ -26,6 +26,21 @@ class ProductController extends Controller
             'categories' => $categoryList]);
     }
 
+    public function store(Request $request){
+        dd($request->all());
+
+        $newProduct = new Product();
+        $newProduct->name = $request->get('nombre');
+        $newProduct->description = $request->get('descripcion');
+        $newProduct->price = $request->get('precio');
+        $newProduct->category_id = $request->get('categoria');
+
+        $newProduct->save();
+
+        return redirect()->route('product.index');
+
+    }
+
     public function show($producto)
     {
         return view('product.show');

@@ -1,48 +1,60 @@
 @extends('layouts.app')
 
-@section('title', 'Crear Producto')
+<!DOCTYPE html>
+<html lang="es">
 
-@section('content')
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Producto</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
+
+<body>
 
 <div class="container">
 
-<h2>Registrar Producto</h2>
+    <h2 class="title">Registrar Nuevo Producto</h2>
 
-<form action="/product/store" method="POST" enctype="multipart/form-data">
+    <form class="form-product" action="#" method="POST" enctype="multipart/form-data">
+        @csrf
 
-@csrf
+        <div class="form-group">
+            <label>Nombre del producto</label>
+            <input type="text" name="nombre" placeholder="Ej: Mouse Gamer RGB" required>
+        </div>
 
-<div class="form-group">
-<label for="nombre">Nombre del Producto</label>
-<input type="text" id="nombre" name="nombre" placeholder="Ej: Laptop Gamer" required>
+        <div class="form-group">
+            <label>Precio</label>
+            <input type="number" name="precio" placeholder="Ej: 120000" required>
+        </div>
+
+        <div class="form-group">
+            <label>Descripción</label>
+            <textarea name="descripcion" rows="4" placeholder="Descripción del producto..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Imagen del producto</label>
+            <input type="file" name="imagen">
+        </div>
+
+        <div class="form-group">
+            <label>Estado del producto</label>
+                <select id="categoria" name="categoria" required>
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
+        </div>
+
+        <button type="submit" class="btn">
+            Guardar Producto
+        </button>
+
+    </form>
+
 </div>
 
-<div class="form-group">
-<label for="precio">Precio</label>
-<input type="number" id="precio" name="precio" step="0.01" placeholder="Ej: 2500" required>
-</div>
 
-<div class="form-group">
-<label for="descripcion">Descripción</label>
-<textarea id="descripcion" name="descripcion" placeholder="Describe el producto"></textarea>
-</div>
-
-<div class="form-group">
-<label for="imagen">Imagen del Producto</label>
-<input type="file" id="imagen" name="imagen" accept="image/*">
-</div>
-
-<div class="form-group">
-<label for="categoria">Estado del Producto</label>
-<select id="categoria" name="categoria" required>
-    @foreach ($categories as $category)
-        <option value="{{ $category->id }}">{{ $category->name }}</option>
-    @endforeach
-</select>
-</div>
-
-<button type="submit">Registrar Producto</button>
-
-</form>
-
-</div>
+</body>
+</html>
