@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layouts.app')
 @section('content')
 <main class="container">
         <h1>Nuestros Productos</h1>
@@ -62,5 +62,3 @@
   }
 </script>
 
-
-@endsection

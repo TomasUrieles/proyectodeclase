@@ -12,12 +12,14 @@ class ProductController extends Controller
     public function index()
     {
 
-        $ProductList=Product::limit(10)->orderby('id','desc')->get();
+    $products = Product::limit(10)->orderBy('id','desc')->get();
 
-        return view('product.index',[
-            'misproductos'=>$ProductList
-        ]);
+    return view('product.index',[
+        'products' => $products
+    ]);
+
     }
+    
     
 
     public function create()
