@@ -5,7 +5,7 @@
 
         <div class="product-grid">
             <!-- Producto 1 -->
-            @foreach($misProductos as $product)
+            @foreach($products as $product)
             <div class="product-card">
                 <div class="product-image">📱</div>
                 <span class="status-badge badge-new">Nuevo</span>
@@ -14,11 +14,6 @@
                 @else
                     <img src="{{ asset('images/default-product.png') }}" alt="Imagen por defecto">
                 @endif
-                          @if($p->image)
-            <img class="catalogImage" src="{{ asset('storage/'.$p->image) }}" alt="Imagen">
-          @else
-            <img class="catalogImage" src="" alt="Imagen por defecto">
-          @endif
                 <div class="product-info">
                     <h3>{{$product->name}}</h3>
                     <p class="product-description">{{$product->description}}</p>
