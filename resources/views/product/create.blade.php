@@ -14,8 +14,7 @@
 <div class="container">
 
     <h2 class="title">Registrar Nuevo Producto</h2>
-
-    <form class="form-product" action="#" method="POST" enctype="multipart/form-data">
+    <form class="form" method="POST" action="{{ route('product.store') }}" enctype="multipart/form-data">
         @csrf
 
         <div class="form-group">
