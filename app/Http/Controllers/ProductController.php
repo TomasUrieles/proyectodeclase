@@ -30,6 +30,16 @@ class ProductController extends Controller
         ]);
     }
 
+    public function edit($producto)
+    {
+        return view('product.edit');
+    }
+
+    public function destroy(Product $product){
+        $product->delete();
+        return redirect()->route('product.index');
+    }   
+
     public function store(Request $request){
         //Validación de datos
         $request->validate([

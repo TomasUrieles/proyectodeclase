@@ -23,6 +23,12 @@
                 <div class="product-actions">
                     <a href="show.html?id=1" class="btn btn-primary">Ver detalles</a>
                     <button class="btn btn-outline">Comprar</button>
+                    <button class="btn btn-outline">Editar</button>
+                    <form action="{{ route('product.destroy', $product) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-outline">Eliminar</button>
+                    </form>
                 </div>
             </div>
 
