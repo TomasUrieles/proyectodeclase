@@ -92,6 +92,24 @@ max-width:500px;
 border-radius:15px;
 box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
+/* ADMIN TABLE */
+
+.admin-table{
+    width:100%;
+    border-collapse: collapse;
+    margin-top:20px;
+}
+
+.admin-table th,
+.admin-table td{
+    padding:12px;
+    border-bottom:1px solid #2a2a30;
+}
+
+.admin-table th{
+    text-align:left;
+    color:#00bcd4;
+}
 
 /* ===== TITULOS ===== */
 
