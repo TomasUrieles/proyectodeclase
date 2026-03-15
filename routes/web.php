@@ -20,7 +20,11 @@ Route::prefix('product')->controller(ProductController::class)->group(function (
 
     Route::delete('/{product}','destroy')->name('product.destroy');
 
+
 });
 
+
+Route::get('/admin', function () {
+    return view('admin.dashboard');})->name('admin.dashboard');
 
 
