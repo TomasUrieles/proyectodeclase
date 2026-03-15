@@ -19,17 +19,15 @@ class ProductController extends Controller
     ]);
 
     }
-    
-    
 
     public function create()
     {
         $categoryList=Category::all();
         return view('product.create',[
-            'category'=>$categoryList
+            'categories'=>$categoryList
         ]);
     }
-
+    
     public function edit($producto)
     {
         return view('product.edit');
@@ -38,7 +36,9 @@ class ProductController extends Controller
     public function destroy(Product $product){
         $product->delete();
         return redirect()->route('product.index');
-    }   
+    }
+    
+
 
     public function store(Request $request){
         //Validación de datos

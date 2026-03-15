@@ -23,12 +23,12 @@ class DatabaseSeeder extends Seeder
             ProductSeeder::class
         ]);*/
 
-         /*Category::factory(1000)->create();*/
+         Category::factory(10)->create();
 
-         /*Product::factory(10000)->create();*/
+         Product::factory(100)->create();
 
-         User::factory(10000)->create();
-         CartItem::factory(10000)->create();
+        User::factory(100)->create();
+          CartItem::factory(100)->create();
 
 
     }
