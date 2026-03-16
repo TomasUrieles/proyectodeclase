@@ -1,11 +1,26 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\CartController;
+
+
+/*
+|--------------------------------------------------------------------------
+| HOME
+|--------------------------------------------------------------------------
+*/
 
 Route::get('/', HomeController::class);
+
+
+/*
+|--------------------------------------------------------------------------
+| PRODUCTOS
+|--------------------------------------------------------------------------
+*/
 
 Route::prefix('product')->controller(ProductController::class)->group(function () {
 
@@ -21,9 +36,14 @@ Route::prefix('product')->controller(ProductController::class)->group(function (
 
     Route::delete('/{product}','destroy')->name('product.destroy');
 
-
 });
 
+
+/*
+|--------------------------------------------------------------------------
+| ADMIN
+|--------------------------------------------------------------------------
+*/
 
 Route::prefix('admin')->group(function () {
 
@@ -31,11 +51,6 @@ Route::prefix('admin')->group(function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
 
-    /*
-    |--------------------------------------------------------------------------
-    | Categorías
-    |--------------------------------------------------------------------------
-    */
 
     Route::prefix('categories')->controller(CategoryController::class)->group(function () {
 
@@ -55,4 +70,20 @@ Route::prefix('admin')->group(function () {
 
 });
 
+
+/*
+|--------------------------------------------------------------------------
+| CARRITO
+|--------------------------------------------------------------------------
+*/
+
+Route::prefix('cart')->controller(CartController::class)->group(function () {
+
+    Route::get('/', 'index')->name('cart.index');
+
+    Route::post('/add/{product}', 'add')->name('cart.add');
+
+    Route::delete('/remove/{id}', 'remove')->name('cart.remove');
+
+});
 
